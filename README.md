@@ -98,15 +98,22 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
+  gem factory_bot_rails
+```
+
+```sh
+  gem rspec-rails
+```
+
+```sh
   bundle install
 ```
 
 ```sh
-  rails db:migrate
-```
-
-```sh
   rails generate rspec:install
+```
+```sh
+  rails db:migrate
 ```
 
 ### Usage
@@ -120,7 +127,7 @@ run the result on the terminal through:
 
 ### Run tests
 
-To run tests, execure the following command on the terminal
+To run tests, execute the following command on the terminal
 
 ```sh
   bundle exec rspec
