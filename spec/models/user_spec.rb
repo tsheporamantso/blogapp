@@ -20,4 +20,14 @@ RSpec.describe User, type: :model do
     user = FactoryBot.build(:user, post_counter: 1)
     expect(user).to be_valid
   end
+
+  describe '#three_recent_posts' do
+    it 'should return three most recent posts' do
+      user = FactoryBot.create(:user)
+      FactoryBot.create(:post, author: user, created_at: 6.days.ago)
+      recent_posts = FactoryBot.create_list(:post, 3, author: user)
+
+      expect(user.three_recent_posts).to eq(recent_posts.reverse)
+    end
+  end
 end
