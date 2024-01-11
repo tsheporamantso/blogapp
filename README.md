@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>BlogApp</b></h3>
+  <h1><b>BlogApp ⚡</b></h1>
 
 </div>
 
