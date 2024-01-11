@@ -105,6 +105,10 @@ Install this project with:
   rails db:migrate
 ```
 
+```sh
+  rails generate rspec:install
+```
+
 ### Usage
 
 To run the project, execute the following command:
@@ -116,7 +120,11 @@ run the result on the terminal through:
 
 ### Run tests
 
-No tests available.
+To run tests, execure the following command on the terminal
+
+```sh
+  bundle exec rspec
+```
 
 ### Deployment
 
