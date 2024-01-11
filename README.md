@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>BlogApp</b></h3>
+  <h1><b>BlogApp ⚡</b></h1>
 
 </div>
 
@@ -98,9 +98,20 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
+  gem factory_bot_rails
+```
+
+```sh
+  gem rspec-rails
+```
+
+```sh
   bundle install
 ```
 
+```sh
+  rails generate rspec:install
+```
 ```sh
   rails db:migrate
 ```
@@ -116,7 +127,11 @@ run the result on the terminal through:
 
 ### Run tests
 
-No tests available.
+To run tests, execute the following command on the terminal
+
+```sh
+  bundle exec rspec
+```
 
 ### Deployment
 
