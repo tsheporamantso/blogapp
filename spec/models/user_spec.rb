@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'should only take integer values' do
-    user = FactoryBot.build(:user, post_counter: "a")
+    user = FactoryBot.build(:user, post_counter: 'a')
     expect(user).to_not be_valid
   end
 
