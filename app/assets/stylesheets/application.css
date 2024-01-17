@@ -1,15 +1,93 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: whitesmoke;
+  font-size: 16px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user_info {
+  display: flex;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  margin: 10px;
+  padding: 10px;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #333;
+  padding: 20px;
+  margin: 10px;
+  width: 20rem;
+}
+
+.user p {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.user_bio {
+  border: 2px solid #333;
+  padding: 10px;
+  margin: 10px;
+  width: 27.5rem;
+}
+
+.post,
+.comments {
+  border: 2px solid #333;
+  padding: 10px;
+  margin: 10px;
+  width: 27.5rem;
+}
+
+.count {
+  text-align: end;
+}
+
+.button {
+  background-color: #333;
+  border: 2px solid #333;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  width: 10rem;
+  color: #fff;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  background-color: lightgrey;
+}

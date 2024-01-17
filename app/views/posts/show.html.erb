@@ -1,1 +1,14 @@
-<h1>Welcome to post show page</h1>
+<div class="container">
+  <div class="post">
+    <h4> Post: <%= @post.title %> </h4>
+    <p class='count'>Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="comments">
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <p><strong><%= comment.user.name %> :</strong> <%= comment.text %></p>
+      </div>
+    <% end %> 
+  </div>
+</div>
