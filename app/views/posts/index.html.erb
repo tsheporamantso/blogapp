@@ -1,7 +1,25 @@
 <div class="container">
-  <div class="use_info">
+  <div class="user_info">
     <div class="img">
       <%= image_tag @user.photo, alt: "User Photo", class: "user-photo"%>
     </div>
+    <div class="user">
+      <h2><%= @user.name %></h2>
+      <p><strong>Number of posts: </strong><%= @user.posts.count %></p>
+    </div>
   </div>
+<a href=""></a>
+  <% @posts.limit(2).each_with_index do |post, index| %>
+    <div class="post">
+      <h3> <%= link_to "Post", user_post_path(@user, post) %> <%= index+1 %> </h2>
+      <p><%= post.text %></p>
+      <p class='count'>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+    </div>
+    <div class="comments">
+      <% post.five_most_recent_comments.each do |comment| %>
+       <p><strong><%= comment.user.name %> :</strong> <%= comment.text %></p>
+      <% end %>
+    </div>
+    <% end %> 
+    <%= link_to "Pagination", user_posts_path(@user), class: "button" %>
 </div>
