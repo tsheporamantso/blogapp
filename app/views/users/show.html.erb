@@ -1,1 +1,23 @@
-<h1>Welcome to user show page!</h1>
+<div class="container">
+  <div class="user_info">
+    <div class="img">
+      <%= image_tag @user.photo, alt: "User Photo", class: "user-photo"%>
+    </div>
+    <div class="user">
+      <h2><%= @user.name %></h2>
+      <p><strong>Number of posts: </strong><%= @user.posts.count %></p>
+    </div>
+  </div>
+  <div class="user_bio">
+    <p>Bio</p>
+    <p><%= @user.bio %></p>
+  </div>
+  <% @user.three_recent_posts.each_with_index do |post, index| %>
+    <div class="post">
+      <h3>Post <%= index+1 %></h3>
+      <p><%= post.title %></p>
+      <p class='count'>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+    </div>
+  <% end %>
+  <%= link_to "See all posts",user_posts_path(@user), class: "button" %> 
+</div>
