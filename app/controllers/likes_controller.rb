@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_user_and_post, only: [:new, :create]
+  before_action :set_user_and_post, only: %i[new create]
 
   def new
     @like = Like.new
@@ -10,9 +10,9 @@ class LikesController < ApplicationController
     @like = @post.likes.new(user: current_user)
 
     if @like.save
-      redirect_to user_post_path(@user, @post), notice: "Like was successfully created."
+      redirect_to user_post_path(@user, @post), notice: 'Like was successfully created.'
     else
-      render :new 
+      render :new
     end
   end
 

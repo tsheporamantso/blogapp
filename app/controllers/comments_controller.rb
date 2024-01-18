@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user_and_post, only: [:new, :create]
+  before_action :set_user_and_post, only: %i[new create]
 
   def new
     store_referer
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   end
 
   def redirect_back_or_default(default)
-    redirect_to(session[:referer] || default )
+    redirect_to(session[:referer] || default)
     session.delete(:referer)
   end
 end

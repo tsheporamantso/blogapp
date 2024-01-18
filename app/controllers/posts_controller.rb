@@ -17,10 +17,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      flash[:success] = "Post was Successfully created"
+      flash[:success] = 'Post was Successfully created'
       redirect_to user_posts_path(current_user)
     else
-      flash[:error] = "Error: post could not be saved"
+      flash[:error] = 'Error: post could not be saved'
       render :new
     end
   end
