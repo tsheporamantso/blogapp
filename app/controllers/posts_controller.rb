@@ -14,12 +14,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.new(post_params)
 
     if @post.save
+      flash[:success] = "Post was Successfully created"
       redirect_to user_posts_path(current_user)
     else
-      render :new, status: :unprocessable_entity
+      flash[:error] = "Error: post could not be saved"
+      render :new
     end
   end
 
