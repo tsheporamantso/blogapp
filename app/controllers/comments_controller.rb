@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_user_and_post, only: [:new, :create]
 
   def new
+    store_referer
     @comment = Comment.new
   end
 
@@ -24,5 +25,14 @@ class CommentsController < ApplicationController
   def set_user_and_post
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
+  end
+
+  def store_referer
+    session[:referer] = request.referer
+  end
+
+  def redirect_back_or_default(default)
+    redirect_to(session[:referer] || default )
+    session.delete(:referer)
   end
 end
