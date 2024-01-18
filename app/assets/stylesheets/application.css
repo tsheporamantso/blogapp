@@ -91,3 +91,9 @@ a:hover {
   text-align: center;
   background-color: lightgrey;
 }
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}

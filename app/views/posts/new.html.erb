@@ -1,0 +1,15 @@
+<h1 style = " color: #336699; margin-top: 12px;">Create a new Post</h1>
+
+<%= form_with model: [@user, @post], url: user_posts_path(@user), method: :post do |form| %>
+  <div>
+    <h3><%= form.label :title %></h3>
+    <%= form.text_field :title, style: "padding: 10px;", placeholder: "Title field for posts" %>
+  </div>
+  <div>
+    <h3><%= form.label :text %> </h3>
+    <%= form.text_area :text, style: "padding: 10px; width:187px; height:90px;", placeholder: "Text area for posts" %>
+  </div>
+  <div>
+    <%= form.submit "Submit the post", style: "background-color: #007BFF; margin: 10px; padding: 10px 15px; color:#fff; border-radius:5px" %>
+  </div>
+<% end %>

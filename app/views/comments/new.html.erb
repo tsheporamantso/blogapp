@@ -1,0 +1,12 @@
+<h1 style = " color: #336699; margin-top: 12px;">Create a new comment</h1>
+
+<%= form_with model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post do |form| %>
+  <div class="">
+    <h3><%= form.label :text %></h3>
+    <%= form.text_area :text, style: "width:230px; height:80px;", placeholder: "Text area for comment" %>
+  </div>
+  <div>
+    <%= form.submit "Submit the post", style: "background-color: #007BFF; padding: 10px 15px; color:#fff; border-radius:5px" %>
+  </div>
+<% end %>
+<%= link_to "See Comment", user_post_path(@user, @post), style:'padding-top: 60px;' %>
