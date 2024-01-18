@@ -2,7 +2,7 @@
 
 <%= form_with model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post do |form| %>
   <div class="">
-    <h3><%= form.label :title %></h3>
+    <h3><%= form.label :text %></h3>
     <%= form.text_area :text, style: "width:230px; height:80px;", placeholder: "Text area for comment" %>
   </div>
   <div>
