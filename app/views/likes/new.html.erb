@@ -1,0 +1,8 @@
+<h1 style = " color: #336699; margin-top: 12px;">Likes</h1>
+
+<%= form_with model: [@user, @post, @like] do |form|  %>
+  <div class="likes">
+    <p style = " color: #336699; margin-top: 12px;">If you like the post, click the button</p>
+    <%= form.submit "Submit the post", style: "background-color: #007BFF; padding: 10px 15px; color:#fff; border-radius:5px" %>
+  </div>
+<% end %>
