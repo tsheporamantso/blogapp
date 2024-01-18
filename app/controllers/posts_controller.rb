@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       redirect_to user_post_path(current_user)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   private
