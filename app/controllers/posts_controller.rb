@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :text)
   end
 
-  def set_posts
+  def set_users
     @user = User.find(params[:user_id])
   end
 end
