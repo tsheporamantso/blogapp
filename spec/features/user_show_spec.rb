@@ -40,7 +40,8 @@ RSpec.describe 'User show page', type: :feature do
     end
 
     it 'redirects to user posts index page' do
-      click_link('See all posts')
+      link = find('a.button', text: 'See all posts')
+      execute_script('arguments[0].click();', link)
       expect(page).to have_current_path(user_posts_path(user))
     end
 
