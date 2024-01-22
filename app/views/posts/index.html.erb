@@ -17,7 +17,7 @@
     </div>
     <div class="comments">
       <% post.five_most_recent_comments.each do |comment| %>
-       <p><strong><%= comment.user.name %> :</strong> <%= comment.text %></p>
+       <p><strong><%= comment.author.name %> :</strong> <%= comment.text %></p>
       <% end %>
     </div>
     <% end %> 
