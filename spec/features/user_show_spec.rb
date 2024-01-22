@@ -13,6 +13,7 @@ RSpec.describe 'User show page', type: :feature do
     it 'displays user photo' do
       expect(page).to have_css("img[alt='User Photo']")
     end
+
     it 'displays user name' do
       expect(page).to have_content(user.name)
     end
@@ -41,6 +42,18 @@ RSpec.describe 'User show page', type: :feature do
     it 'redirects to user posts index page' do
       click_link('See all posts')
       expect(page).to have_current_path(user_posts_path(user))
+    end
+
+    it 'displays user posts likes count' do
+      posts.each do |post|
+        expect(page).to have_content(post.likes_counter)
+      end
+    end
+
+    it 'display user posts comments' do
+      posts.each do |post|
+        expect(page).to have_content(post.comments_counter)
+      end
     end
   end
 end
