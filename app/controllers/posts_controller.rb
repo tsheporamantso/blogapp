@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
-  before_action :set_users, only: %i[index show new]
 
   def index
-    @posts = @user.posts
+    @user = User.includes(:posts).find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
-    @post = @user.posts.find(params[:id])
+    @user = User.includes(posts: :comments).find(params[:id])
+    @post = @user.posts.includes(:comments).find(params[:id])
   end
 
   def new
+    @user = User.find(params[id])
     @post = Post.new
   end
 
@@ -30,9 +32,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
-  end
-
-  def set_users
-    @user = User.find(params[:user_id])
   end
 end
