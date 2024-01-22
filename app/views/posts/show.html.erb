@@ -7,7 +7,7 @@
   <div class="comments">
     <% @post.comments.each do |comment| %>
       <div class="comment">
-        <p><strong><%= comment.user.name %> :</strong> <%= comment.text %></p>
+        <p><strong><%= comment.author.name %> :</strong> <%= comment.text %></p>
       </div>
     <% end %> 
   </div>
