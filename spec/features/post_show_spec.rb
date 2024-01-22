@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe 'Post show page', type: :feature do
@@ -16,7 +15,7 @@ RSpec.describe 'Post show page', type: :feature do
 
   describe 'Post show page' do
     it 'displays post title' do
-      expect(page).to have_content(post.title)    
+      expect(page).to have_content(post.title)
     end
 
     it 'displays post author name' do
@@ -29,7 +28,7 @@ RSpec.describe 'Post show page', type: :feature do
 
     it 'displays post comments count' do
       expect(page).to have_content(post.comments_counter)
-  end
+    end
 
     it 'displays post likes count' do
       expect(page).to have_content(post.likes_counter)

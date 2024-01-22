@@ -14,7 +14,7 @@ RSpec.describe 'User index', type: :feature do
     end
 
     it 'should display all users photo' do
-      users.each do |user|
+      users.each do |_user|
         expect(page).to have_css("img[alt='User Photo']")
       end
     end

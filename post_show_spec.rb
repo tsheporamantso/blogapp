@@ -17,7 +17,7 @@ RSpec.describe 'Post show page' do
     it 'displays post title' do
       expect(page).to have_content(post.title)
     end
-    
-    it 
+
+    it
   end
 end

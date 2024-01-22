@@ -30,7 +30,7 @@ RSpec.describe 'Post Index page', type: :feature do
       expect(page).to have_content(post.likes_counter)
     end
   end
-    
+
   describe 'Posts section in user posts index' do
     it 'Shows post heading' do
       expect(page).to have_content('Post')
@@ -47,7 +47,7 @@ RSpec.describe 'Post Index page', type: :feature do
     it 'Shows pagination section if there are more posts than fit on the view' do
       FactoryBot.create_list(:post, 10, author: user)
       visit user_posts_path(user)
-      expect(page).to have_link('Pagination',href: user_posts_path(user))
+      expect(page).to have_link('Pagination', href: user_posts_path(user))
     end
 
     it 'redirects to post show page' do
@@ -72,4 +72,3 @@ RSpec.describe 'Post Index page', type: :feature do
     end
   end
 end
-
