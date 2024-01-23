@@ -112,6 +112,7 @@ Install this project with:
 ```sh
   rails generate rspec:install
 ```
+
 ```sh
   rails db:migrate
 ```
@@ -148,6 +149,11 @@ Not deployed
 - GitHub: [@tsheporamantso](https://github.com/tsheporamantso)
 - Twitter: [@ramgt001](https://twitter.com/ramgt001)
 - LinkedIn: [Tshepo Gladwin Ramantso](https://www.linkedin.com/in/tshepo-ramantso-b6a35433/)
+
+👤 **May Pyone**
+
+- GitHub: [@May Pyone](https://github.com/MayPyone/)
+- LinkedIn: [May Pyone](https://www.linkedin.com/in/may-pyone-9439961a3/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

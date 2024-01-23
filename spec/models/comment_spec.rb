@@ -8,7 +8,7 @@ RSpec.describe Comment, type: :model do
 
       expect(post.comments_counter).to eq(0)
 
-      FactoryBot.create(:comment, user:, post:)
+      FactoryBot.create(:comment, author: user, post:)
       post.reload
 
       expect(post.comments_counter).to eq(1)
