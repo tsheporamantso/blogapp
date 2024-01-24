@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can %i[destroy create], Post, author_id: user_id
+      can %i[destroy create], Post, author_id: user.id
     end
   end
 end
