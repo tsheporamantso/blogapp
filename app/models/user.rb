@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :post_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  validate :role, inclusion: { in: %i[admin user], message: 'Invalid role' }
+  validates :role, inclusion: { in: %i[admin user], message: 'Invalid role' }
 
   def admin?
     role = 'admin'
