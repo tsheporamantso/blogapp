@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
+  load_and_authorize_resource
 
   def new
     store_referer
