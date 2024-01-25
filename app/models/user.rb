@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :role, inclusion: { in: %i[admin user], message: 'Invalid role' }
 
   def admin?
-    role = 'admin'
+    'admin'
   end
 
   def three_recent_posts

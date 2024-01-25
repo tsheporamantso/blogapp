@@ -33,9 +33,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.destroy
-      flash[:notice] = "Post deleted successfully"
+      flash[:notice] = 'Post deleted successfully'
     else
-      flash[:error] = "Error; Post could not be deleted"
+      flash[:error] = 'Error; Post could not be deleted'
     end
 
     redirect_to user_post_path(current_user)
