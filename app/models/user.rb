@@ -11,6 +11,12 @@ class User < ApplicationRecord
 
   validates :post_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  validates :role, inclusion: { in: %i[admin user], message: 'Invalid role' }
+
+  def admin?
+    'admin'
+  end
+
   def three_recent_posts
     posts.order(created_at: :desc).limit(3)
   end

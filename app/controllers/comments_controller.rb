@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_user_and_post, only: %i[new create]
+  load_and_authorize_resource
 
   def new
     store_referer
@@ -16,6 +17,18 @@ class CommentsController < ApplicationController
       flash[:error] = 'Error: Comment could not be saved'
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+
+    if @comment.destroy
+      flash[:notice] = 'Comment deleted successfully'
+    else
+      flash[:error] = 'Error: Comment could not be deleted'
+    end
+
+    redirect_back_or_default(root_path)
   end
 
   private
