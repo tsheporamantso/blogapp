@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :users, only: [] do
+    resources :users, only: [:index] do
       member do
         get :posts
       end
