@@ -1,11 +1,6 @@
 class Api::PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def index
-    @posts = Post.all
-    render json: { posts: @posts, message: 'List of posts for user' }, status: :created
-  end
-
   def comments
     @post = Post.find(params[:id])
     render json: { comments: @post.comments }
@@ -13,7 +8,7 @@ class Api::PostsController < ApplicationController
 
   def add_comment
     @post = Post.find(params[:id])
-    comment_text = params[:comment][:text]
+    comment_text = params[:text]
     @comment = @post.comments.build(text: comment_text)
     @comment.author = current_user
 

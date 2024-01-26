@@ -1,0 +1,123 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  api/users/{id}/posts:
+    get:
+      summary: Retrieve all posts for a user
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        author_id:
+                          type: integer
+                        title:
+                          type: string
+                        text:
+                          type: string
+                        comment_counter:
+                          type: integer
+                        likes_counter:
+                          type: integer
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+        '404':
+          description: User not found
+  "/api/posts/{id}/comments":
+    get:
+      summary: Retrieves all comments for a given post
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  comments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        author_id:
+                          type: integer
+                        post_id:
+                          type: integer
+                        text:
+                          type: string
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+        '404':
+          description: Post Not Found
+  "/api/posts/{id}/add_comment":
+    parameters:
+    - name: id
+      in: path
+      description: post's id
+      required: true
+      schema:
+        type: integer
+    post:
+      summary: Sends a comment ta a given post
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '201':
+          description: blog created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
