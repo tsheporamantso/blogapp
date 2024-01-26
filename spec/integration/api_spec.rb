@@ -9,21 +9,21 @@ describe 'Post API' do
 
       response '200', 'ok' do
         schema type: :object,
-          properties: {
-            posts: {
-              type: :array,
-              items: {
-                type: :object,
-                properties: {
-                  id: { type: :integer }, author_id: { type: :integer },
-                  title: { type: :string }, text: { type: :string },
-                  comment_counter: { type: :integer }, likes_counter: { type: :integer },
-                  created_at: { type: :string, format: 'date-time' },
-                  updated_at: { type: :string, format: 'date-time' }
-                }
-              }
-            }
-          }
+               properties: {
+                 posts: {
+                   type: :array,
+                   items: {
+                     type: :object,
+                     properties: {
+                       id: { type: :integer }, author_id: { type: :integer },
+                       title: { type: :string }, text: { type: :string },
+                       comment_counter: { type: :integer }, likes_counter: { type: :integer },
+                       created_at: { type: :string, format: 'date-time' },
+                       updated_at: { type: :string, format: 'date-time' }
+                     }
+                   }
+                 }
+               }
         let(:id) { 1 }
         run_test!
       end
@@ -34,7 +34,7 @@ describe 'Post API' do
       end
     end
   end
-   path '/api/posts/{id}/comments' do
+  path '/api/posts/{id}/comments' do
     get 'Retrieves all comments for a given post' do
       tags 'Comments'
       produces 'application/json'
@@ -70,7 +70,7 @@ describe 'Post API' do
     end
   end
 
-   path '/api/posts/{id}/add_comment' do
+  path '/api/posts/{id}/add_comment' do
     parameter name: :id, in: :path, type: :integer, description: "post's id"
 
     post 'Sends a comment ta a given post' do
